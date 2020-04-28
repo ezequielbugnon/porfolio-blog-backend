@@ -1,0 +1,17 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Boton</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody *ngIf= "Images">
+            <tr *ngFor = "let img of Images">
+                <td><button (click) = "eliminar(img._id)">Delete</button></td>
+                <td><img src="{{img.path}}" alt=""></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,7 @@
+<form (submit)="uploadImage()">
+    <label for="image"></label>
+    <input placeholder="sube una foto" type="file" (change)="onFotoSelected($event)" #photoInput>
+    <img [src]="photoSelected || 'assets/descarga.jpg' " alt="No image" (click)="photoInput.click()">
+    <button type="submit">Cargar Imagen</button>
+</form>
+

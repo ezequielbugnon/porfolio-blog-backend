@@ -1,0 +1,17 @@
+<div class="formulario">
+            
+    <form class="form" #editForm="ngForm"  (ngSubmit)="onEdit(editForm)">
+
+
+    
+        <label for="title">titulo</label>
+        <input class="input" type="text" name="title" #title="ngModel" [(ngModel)]="entrada.title">
+
+        <textarea class="froala" [froalaEditor]="froalaOptions" name="content" #content="ngModel"
+        [(ngModel)]="entrada.content"></textarea>
+        
+    
+        <button class="submit" #edForm type="submit">Publicar</button>
+
+    </form> 
+</div>

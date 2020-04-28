@@ -1,0 +1,21 @@
+
+<div class="formulario">
+            
+    <form class="form" #crearForm="ngForm"  (ngSubmit)="onSubmit(crearForm)">
+
+
+    
+        <label for="title">titulo</label>
+        <input class="input" type="text" name="title" #title="ngModel" [(ngModel)]="projects.title">
+
+        <textarea class="froala" [froalaEditor]="froalaOptions" name="content" #content="ngModel"
+        [(ngModel)]="projects.content"></textarea>
+
+        <label for="url">url</label>
+        <input class="input" type="text" name="url" #title="ngModel" [(ngModel)]="projects.url">
+        
+    
+        <button class="submit" #edForm type="submit">Publicar</button>
+
+    </form> 
+</div>

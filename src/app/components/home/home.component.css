@@ -1,0 +1,58 @@
+section{
+    position: absolute;
+    background-color: black;
+    top:50px;
+    width: 95%;
+    
+    margin-left: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.avatar img{
+    border-radius: 100%;
+    border: 1px solid black;
+    height: 350px;
+    width: 350px;
+    margin: 10%;
+}
+
+div{
+    color: white;
+    font-size: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+
+footer{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: black;
+  padding-left: 15%;
+
+}
+
+footer ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+footer li{
+    width: 100%;
+    margin: 3%;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    text-align: center;
+    background-color: black;
+    font-size: 30px;
+    cursor: pointer;
+}
+

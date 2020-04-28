@@ -1,0 +1,74 @@
+<section class="header" (click)="headerOn()">
+    <div class="icon" *ngIf="abrir">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="icon" *ngIf="!abrir">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="titulo">
+        <h2>Panel de control</h2>
+    </div>
+</section>
+
+
+<section #lateral>
+    <div *ngIf="ver">
+        <div class="blog" >
+            <div #bloging (click)="Onselect(value = true)" >Blog</div> 
+            <div *ngIf="posts && select && value">
+                <ul>
+                    <li *ngFor="let post of posts; let i = index"
+                    [ngClass]="post === selectPost ? 'blogSelect' : ''"
+                     class="listPost" (click)="OnlistBlog(post, post._id)"> {{ post.title }}</li>
+                     <!--variable selectpost en dashbord component-->
+                </ul>
+            </div>
+        </div>
+        <div class="blog" >
+           <div #projects (click)="Onselect(value = false)">Projectos</div>
+
+           <div *ngIf="project && select && !value">
+            <ul>
+                <li *ngFor="let pro of project; let i = index"
+                [ngClass]="pro === selectPro ? 'blogSelect' : ''"
+                 class="listPost" (click)="OnlistProject(pro, pro._id)" > {{ pro.title }}</li>
+                 <!--variable selectpost en dashbord component-->
+            </ul>
+        </div>
+        </div> 
+    </div>
+</section>
+
+
+<section class="frontal">
+    <div *ngIf= "value && select">
+    <div  class="ver" *ngIf="ver">
+        <div class="botones">
+            <button  [routerLink]= "['crear']" class="btn">Crear entrada</button>
+            <button  [routerLink]= "['editar/'+postId]" class="btn">Editar entrada</button>
+            <button class="btn" (click) = "borrarEntrada(postId)">Eliminar entrada</button>
+            <button class="btn"  [routerLink]= "['image/'+postId]">Image</button>
+        </div>
+
+        <router-outlet></router-outlet>
+                
+    </div> 
+            
+    </div>
+
+    <div *ngIf= "!value && select">
+        <div class="botones">
+        <button class="btn" [routerLink] = "['projects/crear']">Crear Projects</button>
+        <button class="btn" (click)= "deleteProject(proId)">eliminar Projects</button>
+        <button class="btn" [routerLink] = "['projects/editarImage/' + proId]">Imagen Projects</button>
+        <button class="btn" [routerLink]="['projects/delete/' + proId]">Eliminar</button>
+        </div>
+
+        <router-outlet ></router-outlet>
+    </div>
+     
+    
+      
+
+
+</section>

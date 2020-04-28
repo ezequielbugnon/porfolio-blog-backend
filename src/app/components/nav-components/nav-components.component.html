@@ -1,0 +1,22 @@
+<header>
+    <nav>
+      <div class="logo" ><img src="../../../assets/Sin título-1.png"  alt=""> </div>
+     
+      <div  [ngClass]="{'links':true, 'navactive':active}">
+        <li><a [routerLink]="['/blog']">Blog </a></li>
+        <li><a [routerLink]="['/proyectos']">Proyectos</a></li>
+        <li><a [routerLink]="['/home']">menu</a></li>
+      <div *ngIf="!identity; else logouted">
+        <li><a [routerLink]="['/login']">login</a></li>
+      </div>
+      <ng-template  #logouted>
+         <li><a [routerLink]="['/logout/1']">Logout</a></li>
+      </ng-template>
+      </div> 
+      <div class="burger" (click)="animatNavbar()">
+        <div [ngClass]="{'togg':active, 'line1':true}"></div>
+        <div [ngClass]="{'togg':active, 'line2':true}"></div>
+        <div [ngClass]="{'togg':active, 'line3':true}"></div>
+      </div>
+    </nav>
+  </header>

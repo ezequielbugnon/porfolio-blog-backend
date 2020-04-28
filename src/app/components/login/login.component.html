@@ -1,0 +1,35 @@
+<div class="content-form"> 
+
+<form class="login" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" >
+    
+    <h4>Login</h4>
+ 
+
+    <div class="input">
+    
+    <div class="iconos">
+    <i class="fas fa-envelope-open-text"></i><label for="name">email</label>
+    </div>
+    <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email">
+    
+    <div class="iconos">
+    <i class="fas fa-key"></i><label for="contraseña">contraseña</label>
+    </div>
+    <input type="password" name="password" #password="ngModel" [(ngModel)] = "user.password">
+    </div>
+
+    <div class="botones">
+    <button type="submit">
+        logeate
+    </button>
+    <button (click)="registerRedirect()">
+        Registrate
+    </button >
+    
+    </div>
+    
+</form>
+
+
+
+</div>

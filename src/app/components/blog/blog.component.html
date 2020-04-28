@@ -1,0 +1,24 @@
+<section class="header">
+
+    <div class="pasarela">
+
+    </div>
+</section>
+    
+    <div class="posts" *ngIf="entradas">
+        <div *ngFor = "let entrada of entradas">
+            <h1>{{ entrada.title }}</h1>
+            <ng-template [ngIf]= "!entrada.image[0]" [ngIfElse]="loading">
+                <img src="/assets/wheat.png" alt="" >
+            </ng-template>
+            <ng-template #loading>
+                <img *ngIf="entrada.image[0].path" src="{{ entrada.image[0].path }}" alt="">
+            </ng-template>
+          
+            <article [innerHTML]= "entrada.content.substr(0,1300)+ '...'" ></article>
+            <button>Leer mas</button>
+        </div>
+
+    </div>
+
+

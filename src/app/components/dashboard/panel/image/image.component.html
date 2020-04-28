@@ -1,0 +1,34 @@
+<div>
+    <form  (submit) = "uploadImage()">
+        <label for="image"></label>
+        <input placeholder="sube una foto" type="file" (change)="onFotoSelected($event)" #photoInput>
+        <img [src]="photoSelected || 'assets/descarga.jpg' " alt="No image" (click)= "photoInput.click()">
+        <button type="submit">Cargar Imagen</button>
+    </form>
+
+  
+
+
+<div *ngIf="entrada" class="conteiner-img">
+    <h4>Imagenes de: {{entrada.title}} </h4>
+    <div class= "imagenes" > 
+        <div class="caja" *ngFor = "let img of imagen">
+        <h4>{{img._id}}</h4>
+        <img src="{{img.path}}" alt="">
+        <button class="button-el button" (click)="ventana = true; idImage = img._id">eliminar</button>
+       
+         </div>
+    </div>
+</div>
+</div>
+
+<div class="ventana" [ngClass]="!ventana? 'view': ''">
+        <div class="contenido-ventana">
+                <h4>¿Realmente deseas Eliminar?</h4>
+                <button class="button-el button" (click)="deleteImage(idImage)">si</button>
+                <button class="button-ed button" (click)="ventana = false">no</button>
+        </div>
+</div>
+
+
+

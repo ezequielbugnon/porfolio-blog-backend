@@ -1,0 +1,23 @@
+table, th, td {
+  border: 1px solid black;
+}
+
+
+table{
+    background-color: white;
+    margin-left: 40%;
+    margin-top: 8%;
+    width: 30rem;
+}
+
+button{
+    width: 100%;
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}

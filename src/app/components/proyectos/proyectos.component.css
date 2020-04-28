@@ -1,0 +1,23 @@
+.header{
+    width: 100%;
+    height: 55px;
+    background-color: teal;
+    color: white;
+}
+
+li{
+    font-size: 20px;
+    padding-top: 12px;
+    padding-left: 30px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+a:hover{
+    color: tomato;
+}

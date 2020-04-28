@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    position: relative;
+    z-index: 2;
+    background-color: black;
+    width: 95%;
+    margin-left: 2.5%;
+}
+
+.logo{
+    color: cadetblue;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    width: 65px;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+   
+}
+
+.links li a{
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    display:block;
+    cursor: pointer;
+}
+
+
+
+.links li {
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+  
+}
+
+.links li a:hover{
+    color: cadetblue;
+   
+
+}
+
+ 
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1028px){
+    
+    .links{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        overflow: hidden;
+    }
+    
+    .links{
+        position: absolute;
+        right: 0;
+        height: 92vw;
+        top: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: white;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+
+    }
+
+    .links{
+        opacity: 0;
+    }
+
+    .burger{
+        display: block;
+    }
+}
+
+.navactive{
+    transform: translateX(0%);
+    animation: navLinksfade 0.5s ease forwards 0.2s;
+}
+
+.togg.line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.togg.line2{
+    opacity: 0;
+}
+
+.togg.line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+@keyframes navLinksfade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+

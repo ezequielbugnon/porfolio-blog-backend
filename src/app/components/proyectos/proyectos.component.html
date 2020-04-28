@@ -1,0 +1,7 @@
+<div class="header">
+    <ul *ngFor = "let pro of projects">
+        <li><a [routerLink]="['/proyectos/'+pro.title+'/'+pro._id]">{{ pro.title }}</a></li>
+    </ul>
+</div>
+
+<router-outlet></router-outlet>
